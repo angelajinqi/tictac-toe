@@ -1,5 +1,5 @@
 import random
-
+from logic import Board
 
 class TicTacToe:
 
@@ -95,7 +95,7 @@ class TicTacToe:
 
             # taking user input
             row, col = list(
-                map(int, input("Enter row and column numbers to fix spot: ").split()))
+                map(int, input("Enter row and column numbers to fix spot type rols & column 1-3: ").split()))
             print()
 
             # fixing the spot
@@ -122,3 +122,4 @@ class TicTacToe:
 # starting the game
 tic_tac_toe = TicTacToe()
 tic_tac_toe.start()
+
