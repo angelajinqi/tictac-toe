@@ -1,17 +1,39 @@
-def make_empty_board():
-    return [
-        [None, None, None],
-        [None, None, None],
-        [None, None, None],
-    ]
+class Board:
+
+    board = None
+
+    def __init__(self):
+        self.board = [
+            [None, None, None],
+            [None, None, None],
+            [None, None, None],
+        ]
 
 
-def get_winner(board):
-    """Determines the winner of the given board.
-    Returns 'X', 'O', or None."""
-    return None  # FIXME
+    def get_winner(self):
+        """Determines the winner of the given board.
+        Returns 'X', 'O', or None."""
+        if self.board[0][0] == self.board[0][1]== self.board [0][2]:
+            return self.board[0][0]
+        if self.board[1][0] == self.board[1][1]== self.board [1][2]:
+            return self.board[1][0]
+        if self.board[2][0] == self.board[2][1]== self.board [2][2]:
+            return self.board[2][0]
+        if self.board[0][0] == self.board[1][0]== self.board [2][0]:
+            return self.board[0][0]
+        if self.board[0][1] == self.board[1][1]== self.board [2][1]:
+            return self.board[0][1]
+        if self.board[0][2] == self.board[1][2]== self.board [2][2]:
+            return self.board[0][2]
+        if self.board[0][2]== self.board[1][1]== self.board [2][0]:
+            return self.board[0][2]
+        if self.board[0][0]== self.board[1][1]== self.board [2][2]:
+            return self.board[0][0]
+        return None
 
-
-def other_player(player):
-    """Given the character for a player, returns the other player."""
-    return "O"  # FIXME
+    def other_player(player):
+        """Given the character for a player, returns the other player."""
+        if player == '1':
+            return '0'
+        if player == '0':
+            return '1'
